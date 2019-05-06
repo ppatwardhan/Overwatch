@@ -9,42 +9,129 @@
     <meta name="description" content="OverWatch Stat Analyzer">
 
     <link rel="stylesheet" href="overwatch.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 
 </head>
 
 <body>
-    <h1>OverWatch Stat Analyzer</h1>
-    <p id="left-axis">Stats</p>
-    <p id="left-axis">Damage in 10 min</p>
-    <p id="left-axis">Deaths in 10 min</p>
-    <p id="left-axis">Objective Time</p>
-    <p id="left-axis">Weapon Accuracy</p>
-    <p id="left-axis">Crital Hit Percentage</p>
+    <h1 id="main_title">OverWatch Stats Comparison</h1>
+    <div id="search">
+        <form id="searchform" action="database_interface.php">
+            <input type="text" id="searchPlayer" name="searchPlayer" onfocus="this.value=''" value="Enter Battletag">
+            <select id='hero' name="hero">
+                <option value="bastion">bastion</option>
+                <option value="dVa">dVa</option>
+                <option value="genji">genji</option>
+                <option value="hanzo">hanzo</option>
+                <option value="lúcio">lúcio</option>
+                <option value="roadhog">roadhog</option>
+            </select>
+            <button class='submitButton' id="submitButton">Submit</button>
+            <div class="container">
+                <table class="data_table">
+                    <thead>
+                        <tr>
+                            <th width="108.8">Stats </th>
+                            <th width="22.4">
+                                <p id="your-player">Your Name</p>
+                            </th>
+                            <th width="22.4">
+                                <p id="first-pro">Pro 1</p>
+                            </th>
+                            <th width="23.2">
+                                <p id="second-pro">Pro 2</p>
+                            </th>
+                            <th width="23.2">
+                                <p id="third-pro">Pro 3</p>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Damage/10min </td>
+                            <td>
+                                <p id="your-player-dmg"></p>
+                            </td>
+                            <td>
+                                <p id="first-pro-dmg"></p>
+                            </td>
+                            <td>
+                                <p id="second-pro-dmg">
+                            </td>
+                            <td>
+                                <p id="third-pro-dmg">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Death/10min </td>
+                            <td>
+                                <p id="your-player-death"></p>
+                            </td>
+                            <td>
+                                <p id="first-pro-death"></p>
+                            </td>
+                            <td>
+                                <p id="second-pro-death">
+                            </td>
+                            <td>
+                                <p id="third-pro-death">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Objective time</td>
+                            <td>
+                                <p id="your-player-obj"></p>
+                            </td>
+                            <td>
+                                <p id="first-pro-obj"></p>
+                            </td>
+                            <td>
+                                <p id="second-pro-obj">
+                            </td>
+                            <td>
+                                <p id="third-pro-obj">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Weapon Acc.</td>
+                            <td>
+                                <p id="your-player-acc"></p>
+                            </td>
+                            <td>
+                                <p id="first-pro-acc"></p>
+                            </td>
+                            <td>
+                                <p id="second-pro-acc">
+                            </td>
+                            <td>
+                                <p id="third-pro-acc">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Critical hit </p>
+                            </td>
+                            <td>
+                                <p id="your-player-crit"></p>
+                            </td>
+                            <td>
+                                <p id="first-pro-crit"></p>
+                            </td>
+                            <td>
+                                <p id="second-pro-crit">
+                            </td>
+                            <td>
+                                <p id="third-pro-crit">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <p id="left-player">player name</p>
-    <p id="left-player-dmg"></p>
-    <p id="left-player-deaths"></p>
-    <p id="left-player-time"></p>
-    <p id="left-player-acc"></p>
-    <p id="left-player-crit"></p>
-
-    <p id="mid-player">player name</p>
-    <p id="mid-player-dmg"></p>
-    <p id="mid-player-deaths"></p>
-    <p id="mid-player-time"></p>
-    <p id="mid-player-acc"></p>
-    <p id="mid-player-crit"></p>
-
-    <p id="right-player">player name</p>
-    <p id="right-player-dmg"></p>
-    <p id="right-player-deaths"></p>
-    <p id="right-player-time"></p>
-    <p id="right-player-acc"></p>
-    <p id="right-player-crit"></p>
-
-
-
-    <script src="Overwatch.js"></script>
+            <script src="Overwatch.js"></script>
 </body>
+
+</html>
 
 </html>
