@@ -7,7 +7,11 @@ body {
     background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
     background: linear-gradient(45deg, #4158d0, #c850c0);
 }
-
+#logo{
+    height: 10%;
+    width: 10%;
+    margin: 0;
+}
 .data_table {
     width: 1170px;
 }
@@ -15,7 +19,7 @@ body {
 h1 {
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 table {
@@ -32,19 +36,59 @@ table {
 #line {
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 video {
     transform: translateX(50%) translateY(50%);
-    bottom: 35%;
-    height: 50%;
     position: absolute;
+    bottom: -25%;
     right: 50%;
-    width: auto;
-    overflow: hidden;
+    width: 100% !important;
+    clip-path:  inset(300px 350px 150px 10px);
+}
+.submitButton {
+    background: linear-gradient(#ff8089, #fb767f);
+    color: #fff;
+    padding: 15px;
+    font-size: 15px;
+    margin-left: -4px;
+    margin-right: 4px;
+    border: 0;
+    border-radius: 0 3px 3px 0px;
+    font-weight: 200;
+    text-transform: uppercase;
 }
 
+.submitButton:hover {
+    background: linear-gradient(#76bedf, #5cafd8);
+    cursor: pointer;
+}
+
+input[type="text"] {
+    background-color: #F5F5F5;
+    padding: 15px 10px;
+    border: 0;
+    border-radius: 0;
+    width: 310px;
+    font-style: italic;
+    color: #0000009c;
+    font-size: 15px;
+    border-radius: 3px 0 0 3px;
+    font-weight: 200;
+}
+#hero{
+    background-color: #F5F5F5;
+    padding: 15px 10px;
+    border: 0;
+    border-radius: 0;
+    width: 310px;
+    font-style: italic;
+    color: #0000009c;
+    font-size: 15px;
+    border-radius: 3px 0 0 3px;
+    font-weight: 200;
+}
 #search {
     display: flex;
     justify-content: right;
