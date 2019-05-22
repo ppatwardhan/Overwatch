@@ -9,7 +9,7 @@
     <meta name="description" content="OverWatch Stat Analyzer">
 
     <link rel="stylesheet" href="overwatch.css">
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 
 </head>
@@ -26,121 +26,115 @@
     </div>
 
     <div id="search">
-        <form id="searchform" action="database_interface.php">
+        <form id="searchform" action="database_interface.php" method="post" class = ajax>
             <input type="text" id="searchPlayer" name="searchPlayer" onfocus="this.value=''" value="Enter Battletag">
             <select id='hero' name="hero">
-                <option value="bastion">bastion</option>
-                <option value="dVa">dVa</option>
-                <option value="genji">genji</option>
-                <option value="hanzo">hanzo</option>
-                <option value="lúcio">lúcio</option>
-                <option value="roadhog">roadhog</option>
+                <option selected='selected' value='None'>--Select a Hero--</option>
+                <option value="ana">Ana</option>
+                <option value="ashe">Ashe</option>
+                <option value="baptiste">Baptiste</option>
+                <option value="brigitte">Brigitte</option>
+                <option value="dVa">D.Va</option>
+                <option value="doomfist">Doomfist</option>
+                <option value="genji">Genji</option>
+                <option value="hanzo">Hanzo</option>
+                <option value="junkrat">Junkrat</option>
+                <option value="lucio">Lucio</option>
+                <option value="mcCree">McCree</option>
+                <option value="mei">Mei</option>
+                <option value="mercy">Mercy</option>
+                <option value="moira">Moira</option>
+                <option value="orisa">Orisa</option>
+                <option value="pharah">Pharah</option>
+                <option value="reaper">Reaper</option>
+                <option value="reinhardt">Reinhardt</option>
+                <option value="roadhog">Roadhog</option>
+                <option value="soldier76">Soldier 76</option>
+                <option value="sombra">Sombra</option>
+                <option value="symmetra">Symmetra</option>
+                <option value="torbjorn">Torbjorn</option>
+                <option value="tracer">Tracer</option>
+                <option value="widowmaker">Widowmaker</option>
+                <option value="winston">Winston</option>
+                <option value="wreckingball">Wrecking Ball</option>
+                <option value="zarya">Zarya</option>
+                <option value="zenyatta">Zenyatta</option>
             </select>
-            <button class='submitButton' id="submitButton">Submit</button>
-            <div class="container">
-                <table class="data_table">
-                    <thead>
-                        <tr>
-                            <th width="108.8">Stats </th>
-                            <th width="22.4">
-                                <p id="your-player">Your Name</p>
-                            </th>
-                            <th width="22.4">
-                                <p id="first-pro">Pro 1</p>
-                            </th>
-                            <th width="23.2">
-                                <p id="second-pro">Pro 2</p>
-                            </th>
-                            <th width="23.2">
-                                <p id="third-pro">Pro 3</p>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Damage/min </td>
-                            <td>
-                                <p id="your-player-dmg"></p>
-                            </td>
-                            <td>
-                                <p id="first-pro-dmg"></p>
-                            </td>
-                            <td>
-                                <p id="second-pro-dmg"></p>
-                            </td>
-                            <td>
-                                <p id="third-pro-dmg"></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Death/min </td>
-                            <td>
-                                <p id="your-player-death"></p>
-                            </td>
-                            <td>
-                                <p id="first-pro-death"></p>
-                            </td>
-                            <td>
-                                <p id="second-pro-death"></p>
-                            </td>
-                            <td>
-                                <p id="third-pro-death"></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> Objective time</td>
-                            <td>
-                                <p id="your-player-obj"></p>
-                            </td>
-                            <td>
-                                <p id="first-pro-obj"></p>
-                            </td>
-                            <td>
-                                <p id="second-pro-obj"></p>
-                            </td>
-                            <td>
-                                <p id="third-pro-obj"></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> Weapon Acc.</td>
-                            <td>
-                                <p id="your-player-acc"></p>
-                            </td>
-                            <td>
-                                <p id="first-pro-acc"></p>
-                            </td>
-                            <td>
-                                <p id="second-pro-acc"></p>
-                            </td>
-                            <td>
-                                <p id="third-pro-acc"></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Critical hit </p>
-                            </td>
-                            <td>
-                                <p id="your-player-crit"></p>
-                            </td>
-                            <td>
-                                <p id="first-pro-crit"></p>
-                            </td>
-                            <td>
-                                <p id="second-pro-crit"></p>
-                            </td>
-                            <td>
-                                <p id="third-pro-crit"></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <input type="submit" class='submit' id="submitButton" value="Send"></button>
+        <div class="container">
+            <table class="data_table">
+                <thead>
+                    <tr>
+                        <th width="108.8">Stats </th>
+                        <th width="22.4">
+                            <p id="your-player">Your Name</p>
+                        </th>
+                        <th width="22.4">
+                            <p id="first-pro">Pro 1</p>
+                        </th>
+                        <th width="23.2">
+                            <p id="second-pro">Pro 2</p>
+                        </th>
+                        <th width="23.2">
+                            <p id="third-pro">Pro 3</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Damage/min </td>
+                        <td>
+                            <p id="your-player-dmg"></p>
+                        </td>
+                        <td>
+                            <p id="first-pro-dmg"></p>
+                        </td>
+                        <td>
+                            <p id="second-pro-dmg"></p>
+                        </td>
+                        <td>
+                            <p id="third-pro-dmg"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Death/min </td>
+                        <td>
+                            <p id="your-player-death"></p>
+                        </td>
+                        <td>
+                            <p id="first-pro-death"></p>
+                        </td>
+                        <td>
+                            <p id="second-pro-death"></p>
+                        </td>
+                        <td>
+                            <p id="third-pro-death"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> Kills/min</td>
+                        <td>
+                            <p id="your-player-kills"></p>
+                        </td>
+                        <td>
+                            <p id="first-pro-kills"></p>
+                        </td>
+                        <td>
+                            <p id="second-pro-kills"></p>
+                        </td>
+                        <td>
+                            <p id="third-pro-kills"></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="result"></div>
 
-            <script src="Overwatch.js"></script>
+        <script src="Overwatch.js"></script>
+    </form>
 </body>
+<script src="database_interface.php"></script>
 
 </html>
 
-</html>
